@@ -1,0 +1,11 @@
+{
+  "grupo": "TRP bentão (campeonatos)",
+  "raiz": ".",
+  "principal": "src/app/_layout.tsx",
+  "lista": "src/app/index.tsx",
+  "form": "src/app/adicionar.tsx",
+  "detalhe": "src/app/detalhe/[id].tsx",
+  "dados": ["src/data/campeonatos.ts"],
+  "storage": "src/lib/storage.ts",
+  "sqlite": ""
+}

@@ -1,0 +1,11 @@
+{
+  "grupo": "ref's (viagens)",
+  "raiz": ".",
+  "principal": "App.js",
+  "lista": "App.js",
+  "form": "App.js",
+  "detalhe": "App.js",
+  "dados": ["data/viagens.js"],
+  "storage": "lib/storage.js",
+  "sqlite": ""
+}

@@ -1,0 +1,11 @@
+{
+  "grupo": "TODO DEV (lista de tarefas)",
+  "raiz": ".",
+  "principal": "App.js",
+  "lista": "screens/ListScreen.js",
+  "form": "screens/AddTaskScreen.js",
+  "detalhe": "screens/DetailScreen.js",
+  "dados": ["data/tarefas.js"],
+  "storage": "data/storage.js",
+  "sqlite": ""
+}

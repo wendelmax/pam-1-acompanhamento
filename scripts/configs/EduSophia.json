@@ -1,0 +1,11 @@
+{
+  "grupo": "Educa+ (matérias de estudo)",
+  "raiz": ".",
+  "principal": "src/app/_layout.tsx",
+  "lista": "src/app/(tabs)/index.tsx",
+  "form": "src/app/adicionar.tsx",
+  "detalhe": "src/app/detalhe/[id].tsx",
+  "dados": [],
+  "storage": "src/storage/materias.ts",
+  "sqlite": ""
+}
