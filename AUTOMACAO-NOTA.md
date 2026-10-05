@@ -21,12 +21,30 @@ Injetada via PR em **todos os 12 repos** dos grupos. É o mesmo conteúdo em tod
 - **Gera artefato** `nota-pam` com `nota.md` (relatório legível + badge) e `nota.json` (nota por item, útil p/ automação). **Cada rodada sobrescreve o artefato** → sempre mostra a **nota atual**.
 - Publica também o resumo direto na aba **Actions** da rodada.
 
+### Onde o aluno vê a nota (visibilidade)
+
+O artefato, sozinho, ficava escondido (no fim da página da rodada, dentro de um `.zip`, com 0 downloads). Por isso o CI **publica a nota dentro do repositório**, a cada push na `main`:
+
+| Onde | O que aparece |
+|---|---|
+| **Topo do `README.md`** | Bloco "Nota atual (automática)" com **2 badges** — status do CI e a **nota com conceito e cor** (I vermelho, R laranja, B amarelo, MB verde) — mais a tabela de pontos de cada fase |
+| **`NOTA.md`** na raiz | Checklist completo (40 itens) com `[x]`/`[ ]`, mostrando o que falta |
+| Aba **Actions** → Summary | Relatório da rodada |
+| Artefato `nota-pam` | `nota.md` + `nota.json` (download) |
+
+O bloco do README fica entre `<!-- PAM-CI-NOTA-INICIO -->` e `<!-- PAM-CI-NOTA-FIM -->`. O CI reescreve **só o conteúdo entre os marcadores** — o resto do README do grupo nunca é tocado (verificado que é idempotente: rodar duas vezes não duplica nada).
+
+**Como evitar loop:** o commit automático usa `[skip ci]`, então a publicação não dispara uma nova execução. O passo só roda em `push` na `main` (nos PRs o token é somente-leitura).
+
+**Validação feita:** num repositório de teste, um push que adicionou um módulo SQLite mudou a nota de **56% → 71%** e o badge/README foram atualizados sozinhos pelo CI.
+
 ## Arquivos injetados (copia versionada em [`scripts/`](scripts/))
 
 | Arquivo | Papel |
 |---|---|
 | `pam-ci.mjs` | Script de validação (Node puro, sem deps). Lê a config, varre o código, preenche o checklist, calcula a nota e escreve `nota.md` + `nota.json`. |
-| `pam-ci.yml` | Workflow (checkout → roda o script → publica resumo → sobe artefato). |
+| `publicar-nota.mjs` | Publica a nota no repositório: escreve o bloco com badges no `README.md` (entre marcadores) e gera o `NOTA.md`. |
+| `pam-ci.yml` | Workflow (checkout → roda o script → publica resumo → sobe artefato → escreve no README/NOTA.md → commit `[skip ci]`). Precisa de `permissions: contents: write`. |
 | `pam-ci.config.json` | **Por projeto:** `grupo`, `raiz`, e os caminhos de `principal`, `lista`, `form`, `detalhe`, `dados[]`, `storage`, `sqlite`. É o único que muda entre os grupos. |
 | `pr-body.md` | Corpo padrão do PR (explicação ao grupo). |
 
@@ -73,12 +91,17 @@ cd repos/<repo>
 git -c user.email="jackson.sa@cps.sp.gov.br" -c user.name="Jackson Sá" checkout -b ci/pam-nota
 git add -A
 git -c user.email="jackson.sa@cps.sp.gov.br" -c user.name="Jackson Sá" commit -m "ci: validacao das fases e nota automatica (I/R/B/MB)"
-git push -f https://github.com/wendelmax/<Repo>.git ci/pam-nota:ci/pam-nota
+git remote add fork git@github.com:wendelmax/<Repo>.git   # SSH!
+git push -f fork ci/pam-nota:ci/pam-nota
 # 4) abrir/atualizar o PR (head = wendelmax:ci/pam-nota)
 gh pr create --repo <owner>/<repo> --base main --head wendelmax:ci/pam-nota --title "..." --body-file scripts/pr-body.md
 ```
 
-> **Importante:** dar force-push com a branch **baseada no main atual do grupo**. Se basar no main do fork (que pode estar velho), o PR aparece cheio de conflito/diff do app inteiro.
+> **Importante 1:** use **SSH** no push. Via HTTPS o token do `gh` nao tem escopo `workflow` e o GitHub **rejeita** qualquer push que altere `.github/workflows/*` ("refusing to allow an OAuth App ... without `workflow` scope").
+>
+> **Importante 2:** antes de commitar, **remova `nota.md` e `nota.json`** (sao artefatos temporarios locais; no repo so vao `README.md` e `NOTA.md`).
+>
+> **Importante 3:** dar force-push com a branch **baseada no main atual do grupo**. Se basar no main do fork (que pode estar velho), o PR aparece cheio de conflito/diff do app inteiro.
 
 ## Subir o CI em um repo novo (grupo novo)
 

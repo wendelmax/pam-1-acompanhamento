@@ -39,9 +39,11 @@ PR com workflow + script + config injetado em **todos os 12 repos** (ver `AUTOMA
 
 1. **Nunca** sobrescrever o trabalho dos grupos. Aosyncronizar um fork, **adaptar ao código que o grupo já tem** (estrutura de pastas, nomes de arquivos, App.js vs src/app). Como feito no Boom-Patch e no Vamoa-.
 2. **Fork desatualizado**: os forks em `wendelmax/` podem estar atrás do main do grupo. Antes de abrir PR, clonar o repo **do grupo** e basar a branch no main **atual** dele; só então dar force-push no fork. (Foi assim que os PRs de CI ficaram limpos: só 3 arquivos novos, sem diff do app.)
-3. **Issue aberta já existente**: **não duplicar**. Antes de criar, listar issues abertas do repo.
-4. **Toda issue/PR** deve ser escrita em **pt-BR**, no tom didático do professor, com blocos de código e "onde alterar".
-5. **Fase 3 é o foco atual** (prazo 19/10/2026). O CI pondera Fase 3 com o maior peso.
+3. **Push que mexe em `.github/workflows/`: use SSH, nunca HTTPS.** O token OAuth do `gh` nao tem escopo `workflow` e o GitHub rejeita o push ("refusing to allow an OAuth App to create or update workflow ... without `workflow` scope"). Addicione o remote com `git@github.com:wendelmax/<repo>.git`.
+4. **Nao comite `nota.md`/`nota.json`** (artefatos locais do script). No repo vao apenas `README.md` (bloco da nota) e `NOTA.md`.
+5. **Issue aberta já existente**: **não duplicar**. Antes de criar, listar issues abertas do repo.
+6. **Toda issue/PR** deve ser escrita em **pt-BR**, no tom didático do professor, com blocos de código e "onde alterar".
+7. **Fase 3 é o foco atual** (prazo 19/10/2026). O CI pondera Fase 3 com o maior peso.
 
 ## 4. Como retomar (roteiro)
 
