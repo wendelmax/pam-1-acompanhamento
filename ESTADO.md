@@ -1,27 +1,35 @@
-# Estado dos grupos (28–29/09/2026)
+# Estado dos grupos (05/10/2026)
 
 Legenda: 🟢 em dia · 🟡 em desenvolvimento · 🔴 travado/precisa de ajuda
 
-| # | Projeto | Grupo | Tema | Fase atual | Nota CI aprox. | Pendências |
-|---|---------|-------|------|------------|----------------|------------|
-| 1 | ToDoDev- | FocusIT | Lista de tarefas | F2 (AsyncStorage) | ~R | Faltam: instalação da dependência async-storage (issue #2); F3 SQLite (issue #3) |
-| 2 | EDUCAMIRIM | VIISRE | Atividades do Mirim | **F3 (SQLite)** | ~MB | Mais adiantado. Revisar F3 (issue #3 aberta como guia) |
-| 3 | 3GDStock | 3GD | Estoque de materiais | F2 | ~R | Dependência async-storage ausente (issue #2); F3 (issue #3) |
-| 4 | TripGo | TripGo | Viagens | F2 | ~B | F3 (issue #7). Issue #1 (design) do próprio grupo |
-| 5 | equipcontrol | TechControl | Equipamentos | F2 | ~B | F3 (issue #3) |
-| 6 | EduSophia | Educa+ | Matérias | F2 | ~B | F3 (issue #3) |
-| 7 | MEIHub | Babuínos do note.js | Gestão MEI | F1→F2 | ~R | Falta concluir F2 (issue #3 do professor); F3 (issue #4) |
-| 8 | CDF | Controle Fin. Diário | Lançamentos | F2 | ~B | F3 (issue #3) |
-| 9 | Pet_Match | Zenin's | Adoção de pets | F1 (parcial) | ~R | Dependência ausente + lista não carrega (issue #7); F2 (issue #4); F3 (issue #5) |
-| 10 | F.O.C | F.O.C | Controle financeiro | F2 (parcial) | ~R | Falta finalizar persistência (issue #4); F3 (issue #5) |
-| 11 | Vamoa- | ref's | Viagens | F2 ✅ (PR #3 mergeado) | ~B | F3 (issue #4). Issue #5 já resolvida pelo merge |
-| 12 | Boom-Patch | TRP bentão | Campeonatos | F2 ✅ (PR #4 mergeado) | ~B | F3 (issue #5). CI já mergeado e rodando |
+Notas medidas pelo **CI de cada repo** (rodada de 05/10/2026). I = Insuficiente (<25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (≥75%).
 
-> As "notas CI aprox." são uma leitura qualitativa do checklist na data acima — **a fonte oficial é o CI de cada repo** (artefato `nota-pam`). As Fases 1/2 já dão a base; a **Fase 3 (30 dos 55 pontos)** é o que mais move a nota agora.
+| # | Projeto | Grupo | Tema | F1 | F2 | F3 | Nota | Pendências |
+|---|---------|-------|------|----|----|----|------|------------|
+| 1 | ToDoDev- | FocusIT | Lista de tarefas | 8/10 | 12/15 | **2/30** | **R** 40% (22/55) | F3 praticamente zerada. Issue #3 (SQLite) é o caminho |
+| 2 | EDUCAMIRIM | VIISRE | Atividades do Mirim | 10/10 | 15/15 | 28/30 | **MB** 96% (53/55) | Só 2 pts de F3. Quase pronto p/ nota máxima |
+| 3 | 3GDStock | 3GD | Estoque de materiais | 8/10 | 10/15 | **4/30** | **R** 40% (22/55) | F2 parcial + F3 zerada. Issues #2 e #3 |
+| 4 | TripGo | TripGo | Viagens | 8/10 | 10/15 | **2/30** | **R** 36% (20/55) | F3 zerada. Issue #7 (Fase 3) |
+| 5 | equipcontrol | TechControl | Equipamentos | 10/10 | 13/15 | **8/30** | **B** 56% (31/55) | F3 em andamento. Issue #3 |
+| 6 | EduSophia | Educa+ | Matérias | 9/10 | 13/15 | **4/30** | **R** 47% (26/55) | F3 zerada. Issue #3 |
+| 7 | MEIHub | Babuínos do note.js | Gestão MEI | 8/10 | 10/15 | **2/30** | **R** 36% (20/55) | F2 e F3. Issues #3 e #4 |
+| 8 | CDF | Controle Fin. Diário | Lançamentos | 9/10 | 14/15 | 26/30 | **MB** 89% (49/55) | Bem avançado. F3 quase completa |
+| 9 | Pet_Match | Zenin's | Adoção de pets | 7/10 | 11/15 | **2/30** | **R** 36% (20/55) | Menor nota: F1 e F3. Issues #4, #5, #7 |
+| 10 | F.O.C | F.O.C | Controle financeiro | 8/10 | 13/15 | **4/30** | **R** 45% (25/55) | F3 zerada. Issue #5 |
+| 11 | Vamoa- | ref's | Viagens | 9/10 | 15/15 | **2/30** | **R** 47% (26/55) | F2 ✅ (PR #3 mergeado). F3 zerada (issue #4) |
+| 12 | Boom-Patch | TRP bentão | Campeonatos | 9/10 | 15/15 | 6/30 | **B** 55% (30/55) | F2 ✅ e rodando. F3 em andamento |
+
+**Resumo:** 2 grupos no MB (EDUCAMIRIM, CDF), 2 no B (equipcontrol, Boom-Patch), 8 no R. Nenhum no I.
+A **Fase 3 (30 dos 55 pontos)** é o maior gap: 8 de 12 grupos estão com 4 pts ou menos nela. Onde investirem, a nota sobe muito.
 
 ## O que já foi entregue aos grupos
 
-- ✅ Scaffolds de Fases 1/2 prontos em **Vamoa-** e **Boom-Patch** (mesclados pelos grupos).
-- ✅ **CI de nota** em PR em todos os 12 repos (aguardando merge dos grupos, exceto Boom-Patch já mergeou).
+- ✅ Scaffolds de Fases 1/2 prontos em **Vamoa-** e **Boom-Patch** (mergeados pelos grupos).
+- ✅ **CI de nota** com badge no `README.md` em **PR em todos os 12 repos** (aguardando merge dos grupos).
 - ✅ **Issue de Fase 3** (dicas SQLite por tema) em todos os 12 repos.
 - ✅ **Issue de correção** para os que usam AsyncStorage sem a dependência (ToDoDev-, 3GDStock, Pet_Match).
+
+## Pendências que dependem dos grupos
+
+- Merge dos PRs de CI (8 abertos por merge, 4 já com branch atualizada).
+- Cada grupo maintainer o próprio PR; o professor revisa e mergeia.
