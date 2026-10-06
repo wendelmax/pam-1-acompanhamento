@@ -37,3 +37,7 @@ Este repositório **não é um app**. É o "mapa" do acompanhamento: onde cada g
 - **Vamoa-**, **Boom-Patch** e **CDF** já mesclaram o material de Fases 1/2 do professor.
 - **EDUCAMIRIM** é o mais adiantado (Fase 3 com SQLite praticamente pronta).
 - Grupos que usam AsyncStorage **sem a dependência** no `package.json` (o app quebra ao abrir): **ToDoDev-**, **3GDStock**, **Pet_Match** — há issue aberta para cada.
+
+## Guia em PDF para outros professores
+
+[`guia/guia-ci-nota.pdf`](guia/guia-ci-nota.pdf) — 18 páginas explicando como a esteira de nota funciona e como aplicá-la em outras turmas. Tem as 5 armadilhas da implantação real, a receita passo a passo, os 40 critérios e as notas reais dos 12 projetos. Ver [`guia/README.md`](guia/README.md).

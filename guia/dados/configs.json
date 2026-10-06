@@ -1,0 +1,152 @@
+{
+  "3GDStock": {
+    "grupo": "3GD (estoque de materiais de construção)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "screens/ListaScreen.js",
+    "form": "",
+    "detalhe": "screens/DetalheScreen.js",
+    "dados": [
+      "data/mockData.js"
+    ],
+    "storage": "",
+    "sqlite": ""
+  },
+  "Boom-Patch": {
+    "grupo": "TRP bentão (campeonatos)",
+    "raiz": ".",
+    "principal": "src/app/_layout.tsx",
+    "lista": "src/app/index.tsx",
+    "form": "src/app/adicionar.tsx",
+    "detalhe": "src/app/detalhe/[id].tsx",
+    "dados": [
+      "src/data/campeonatos.ts"
+    ],
+    "storage": "src/lib/storage.ts",
+    "sqlite": ""
+  },
+  "CDF": {
+    "grupo": "Controle Financeiro Diário (lançamentos)",
+    "raiz": ".",
+    "principal": "src/app/_layout.tsx",
+    "lista": "src/app/(tabs)/index.tsx",
+    "form": "src/app/adicionar.tsx",
+    "detalhe": "src/app/detalhes.tsx",
+    "dados": [
+      "src/app/dados.js"
+    ],
+    "storage": "src/app/dados.js",
+    "sqlite": ""
+  },
+  "EDUCAMIRIM": {
+    "grupo": "VIISRE (atividades do Mirim)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "src/screens/ListScreen.js",
+    "form": "src/screens/AddActivityScreen.js",
+    "detalhe": "src/screens/DetailScreen.js",
+    "dados": [
+      "src/data/status.js"
+    ],
+    "storage": "src/data/storage.js",
+    "sqlite": "src/data/database.js"
+  },
+  "EduSophia": {
+    "grupo": "Educa+ (matérias de estudo)",
+    "raiz": ".",
+    "principal": "src/app/_layout.tsx",
+    "lista": "src/app/(tabs)/index.tsx",
+    "form": "src/app/adicionar.tsx",
+    "detalhe": "src/app/detalhe/[id].tsx",
+    "dados": [],
+    "storage": "src/storage/materias.ts",
+    "sqlite": ""
+  },
+  "F.O.C": {
+    "grupo": "F.O.C (controle financeiro)",
+    "raiz": ".",
+    "principal": "src/app/_layout.tsx",
+    "lista": "src/app/index.tsx",
+    "form": "src/app/valor.tsx",
+    "detalhe": "src/app/pg2.tsx",
+    "dados": [
+      "src/storage/financeStorage.ts"
+    ],
+    "storage": "src/storage/financeStorage.ts",
+    "sqlite": ""
+  },
+  "MEIHub": {
+    "grupo": "Babuínos do note.js (gestão MEI)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "src/Lista.js",
+    "form": "",
+    "detalhe": "src/Detalhe.js",
+    "dados": [],
+    "storage": "src/Lista.js",
+    "sqlite": ""
+  },
+  "Pet_Match": {
+    "grupo": "Zenin's (adoção de pets)",
+    "raiz": ".",
+    "principal": "src/app/_layout.tsx",
+    "lista": "src/app/index.tsx",
+    "form": "src/app/Cadastro.tsx",
+    "detalhe": "",
+    "dados": [],
+    "storage": "",
+    "sqlite": ""
+  },
+  "ToDoDev-": {
+    "grupo": "TODO DEV (lista de tarefas)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "screens/ListScreen.js",
+    "form": "screens/AddTaskScreen.js",
+    "detalhe": "screens/DetailScreen.js",
+    "dados": [
+      "data/tarefas.js"
+    ],
+    "storage": "data/storage.js",
+    "sqlite": ""
+  },
+  "TripGo": {
+    "grupo": "TripGo (viagens)",
+    "raiz": ".",
+    "principal": "app/index.tsx",
+    "lista": "app/Lista.tsx",
+    "form": "",
+    "detalhe": "",
+    "dados": [
+      "components/funcoes_lista.ts"
+    ],
+    "storage": "components/funcoes_lista.ts",
+    "sqlite": ""
+  },
+  "Vamoa-": {
+    "grupo": "ref's (viagens)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "App.js",
+    "form": "App.js",
+    "detalhe": "App.js",
+    "dados": [
+      "data/viagens.js"
+    ],
+    "storage": "lib/storage.js",
+    "sqlite": ""
+  },
+  "equipcontrol": {
+    "grupo": "TechControl (equipamentos)",
+    "raiz": ".",
+    "principal": "App.js",
+    "lista": "src/screens/EquipmentListScreen.js",
+    "form": "src/screens/EquipmentFormScreen.js",
+    "detalhe": "src/screens/EquipmentDetailScreen.js",
+    "dados": [
+      "src/data/equipments.js"
+    ],
+    "storage": "src/data/equipments.js",
+    "sqlite": ""
+  }
+}

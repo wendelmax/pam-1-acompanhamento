@@ -1,0 +1,11 @@
+{
+  "grupo": "VIISRE (atividades do Mirim)",
+  "raiz": ".",
+  "principal": "App.js",
+  "lista": "src/screens/ListScreen.js",
+  "form": "src/screens/AddActivityScreen.js",
+  "detalhe": "src/screens/DetailScreen.js",
+  "dados": ["src/data/status.js"],
+  "storage": "src/data/storage.js",
+  "sqlite": "src/data/database.js"
+}

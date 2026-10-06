@@ -1,0 +1,11 @@
+{
+  "grupo": "F.O.C (controle financeiro)",
+  "raiz": ".",
+  "principal": "src/app/_layout.tsx",
+  "lista": "src/app/index.tsx",
+  "form": "src/app/valor.tsx",
+  "detalhe": "src/app/pg2.tsx",
+  "dados": ["src/storage/financeStorage.ts"],
+  "storage": "src/storage/financeStorage.ts",
+  "sqlite": ""
+}

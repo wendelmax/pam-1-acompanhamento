@@ -1,0 +1,11 @@
+{
+  "grupo": "Controle Financeiro Diário (lançamentos)",
+  "raiz": ".",
+  "principal": "src/app/_layout.tsx",
+  "lista": "src/app/(tabs)/index.tsx",
+  "form": "src/app/adicionar.tsx",
+  "detalhe": "src/app/detalhes.tsx",
+  "dados": ["src/app/dados.js"],
+  "storage": "src/app/dados.js",
+  "sqlite": ""
+}

@@ -1,0 +1,11 @@
+{
+  "grupo": "TechControl (equipamentos)",
+  "raiz": ".",
+  "principal": "App.js",
+  "lista": "src/screens/EquipmentListScreen.js",
+  "form": "src/screens/EquipmentFormScreen.js",
+  "detalhe": "src/screens/EquipmentDetailScreen.js",
+  "dados": ["src/data/equipments.js"],
+  "storage": "src/data/equipments.js",
+  "sqlite": ""
+}

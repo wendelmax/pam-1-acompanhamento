@@ -1,0 +1,11 @@
+{
+  "grupo": "Zenin's (adoção de pets)",
+  "raiz": ".",
+  "principal": "src/app/_layout.tsx",
+  "lista": "src/app/index.tsx",
+  "form": "src/app/Cadastro.tsx",
+  "detalhe": "",
+  "dados": [],
+  "storage": "",
+  "sqlite": ""
+}

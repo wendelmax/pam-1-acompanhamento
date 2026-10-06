@@ -1,0 +1,14 @@
+[
+  { "projeto": "EDUCAMIRIM", "grupo": "VIISRE", "f1": "10/10", "f2": "15/15", "f3": "28/30", "nota": "MB", "pct": 96, "pts": "53/55", "pr": "#5 merged" },
+  { "projeto": "CDF", "grupo": "Controle Fin. Diário", "f1": "9/10", "f2": "14/15", "f3": "26/30", "nota": "MB", "pct": 89, "pts": "49/55", "pr": "#5 aberto" },
+  { "projeto": "Boom-Patch", "grupo": "TRP bentão", "f1": "9/10", "f2": "15/15", "f3": "6/30", "nota": "B", "pct": 55, "pts": "30/55", "pr": "#9 merged" },
+  { "projeto": "equipcontrol", "grupo": "TechControl", "f1": "10/10", "f2": "13/15", "f3": "8/30", "nota": "B", "pct": 56, "pts": "31/55", "pr": "#5 aberto" },
+  { "projeto": "EduSophia", "grupo": "Educa+", "f1": "9/10", "f2": "13/15", "f3": "4/30", "nota": "R", "pct": 47, "pts": "26/55", "pr": "#4 aberto" },
+  { "projeto": "Vamoa-", "grupo": "ref's", "f1": "9/10", "f2": "15/15", "f3": "2/30", "nota": "R", "pct": 47, "pts": "26/55", "pr": "#7 merged" },
+  { "projeto": "F.O.C", "grupo": "F.O.C", "f1": "8/10", "f2": "13/15", "f3": "4/30", "nota": "R", "pct": 45, "pts": "25/55", "pr": "#6 merged" },
+  { "projeto": "ToDoDev-", "grupo": "FocusIT", "f1": "8/10", "f2": "12/15", "f3": "2/30", "nota": "R", "pct": 40, "pts": "22/55", "pr": "#5 aberto" },
+  { "projeto": "3GDStock", "grupo": "3GD", "f1": "8/10", "f2": "10/15", "f3": "4/30", "nota": "R", "pct": 40, "pts": "22/55", "pr": "#5 aberto" },
+  { "projeto": "TripGo", "grupo": "TripGo", "f1": "8/10", "f2": "10/15", "f3": "2/30", "nota": "R", "pct": 36, "pts": "20/55", "pr": "#8 merged" },
+  { "projeto": "Pet_Match", "grupo": "Zenin's", "f1": "7/10", "f2": "11/15", "f3": "2/30", "nota": "R", "pct": 36, "pts": "20/55", "pr": "#8 merged" },
+  { "projeto": "MEIHub", "grupo": "Babuínos do note.js", "f1": "8/10", "f2": "10/15", "f3": "2/30", "nota": "R", "pct": 36, "pts": "20/55", "pr": "#6 aberto" }
+]

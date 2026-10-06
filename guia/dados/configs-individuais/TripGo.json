@@ -1,0 +1,11 @@
+{
+  "grupo": "TripGo (viagens)",
+  "raiz": ".",
+  "principal": "app/index.tsx",
+  "lista": "app/Lista.tsx",
+  "form": "",
+  "detalhe": "",
+  "dados": ["components/funcoes_lista.ts"],
+  "storage": "components/funcoes_lista.ts",
+  "sqlite": ""
+}
