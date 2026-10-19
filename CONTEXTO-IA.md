@@ -35,6 +35,14 @@ Uma issue por grupo com **dicas contextualizadas ao tema** (schema da tabela, bl
 ### 2.5 CI de nota (29/09) — a "automação" principal
 PR com workflow + script + config injetado em **todos os 12 repos** (ver `AUTOMACAO-NOTA.md` e a pasta `scripts/`).
 
+### 2.6 Rodada de 19/10 — nota visível em 9/12 e regressões
+- Notas: **4 MB** (EDUCAMIRIM 96, CDF 89, MEIHub 80, ToDoDev- 76) · **2 B** · **6 R** · **0 I** · média 59,7%.
+- **MEIHub** subiu de R 36% para MB 80% (SQLite em 19/10) e o **bot publicou sozinho** — prova de que o ciclo fecha sem ação do professor.
+- **9 de 12 PRs de nota visível já mergeados**. Restam ToDoDev- #5, 3GDStock #5, equipcontrol #5 (comentário postado nos 3 pedindo o merge).
+- **Issue #6 no ToDoDev-**: `package.json` sobrescrito pelo `package-lock.json` (ver regra 9 abaixo).
+- PR do ToDoDev- estava **CONFLICTING** — resolvido juntando o `main` do grupo na branch da nota (fluxo em `AUTOMACAO-NOTA.md`).
+- `docs/status-projetos.md` do workspace das aulas reescrito com este quadro — deixado **sem commit**; só commitar se o professor pedir.
+
 ## 3. Regras de ouro ao continuar
 
 1. **Nunca** sobrescrever o trabalho dos grupos. Aosyncronizar um fork, **adaptar ao código que o grupo já tem** (estrutura de pastas, nomes de arquivos, App.js vs src/app). Como feito no Boom-Patch e no Vamoa-.
@@ -44,6 +52,8 @@ PR com workflow + script + config injetado em **todos os 12 repos** (ver `AUTOMA
 5. **Issue aberta já existente**: **não duplicar**. Antes de criar, listar issues abertas do repo.
 6. **Toda issue/PR** deve ser escrita em **pt-BR**, no tom didático do professor, com blocos de código e "onde alterar".
 7. **Fase 3 é o foco atual** (prazo 19/10/2026). O CI pondera Fase 3 com o maior peso.
+8. **Exista em DUADO PRs de CI com branches diferentes.** `ci/pam-nota` = PR de validação + script (29/09); `ci/nota-visivel` = PR de badge + `NOTA.md` (05/10). Antes de clonar/mergear, descubra qual é: `gh pr view -R <owner>/<repo> <num> --json headRefName`. Na duvida, **nao adivinhe pelo nome** (custou um merge na branch errada em 19/10, que teria apagado o badge).
+9. **Anti-padrao recorrente: `package.json` trocado pelo `package-lock.json`.** Detectado no ToDoDev- (issue #6): commit com mensagem aleatoria ("Update print statement...") subiu o lockfile por cima do manifest — o repo fica com `lockfileVersion` no `package.json`, sem `dependencies`/`main`. Na rodada diaria, vale checar: `python3 -c "import json; print('lockfileVersion' in json.load(open('package.json')))"`. Custa uns 7 pts e quebra o `npm install`.
 
 ## 4. Como retomar (roteiro)
 

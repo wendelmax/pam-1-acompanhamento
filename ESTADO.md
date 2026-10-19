@@ -40,6 +40,6 @@ Média da turma: **59,7%** (32,8/55, somando 394 de 660 pontos disponíveis). A 
 
 ## Pendências que dependem dos grupos
 
-- Merge dos PRs da nota visível: **ToDoDev- #5**, **3GDStock #5**, **equipcontrol #5** (os 3 restantes).
-- **ToDoDev-**: corrigir o `package.json` (restaurar o manifest válido; o atual é o lockfile).
+- Merge dos PRs da nota visível: **ToDoDev- #5**, **3GDStock #5**, **equipcontrol #5** — comentário postado nos 3 em 19/10 pedindo o merge.
+- **ToDoDev-**: corrigir o `package.json` — [issue #6](https://github.com/manu0312090-hub/ToDoDev-/issues/6) com o passo a passo (restaura o manifest e sobe 76% → 84%).
 - 6 grupos com Fase 3 praticamente zerada: F1 e F2 já estão suficientes, o ganho está em instalar e usar o SQLite.

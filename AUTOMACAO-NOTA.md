@@ -77,7 +77,18 @@ node .github/scripts/pam-ci.mjs
 
 ## Reinjetar / atualizar o CI nos repos (após editar o script)
 
-O fluxo que gerou os PRs (todos os repos, com branch `ci/pam-nota`):
+Há **duas famílias de PR de CI** — confirme a branch antes de mexer:
+
+| PR | Branch | Conteúdo |
+|----|--------|----------|
+| validação + script (29/09) | `ci/pam-nota` | `pam-ci.yml`, `pam-ci.mjs`, config |
+| badge + `NOTA.md` (05/10) | `ci/nota-visivel` | o bloco no `README.md`, `NOTA.md`, job `publicar-nota` |
+
+```bash
+gh pr view -R <owner>/<repo> <numero> --json headRefName,mergeable --jq '"\(.headRefName) \(.mergeable)"'
+```
+
+O fluxo que gerou os PRs de validação (branch `ci/pam-nota`):
 
 ```bash
 # 1) clonar o repo DO GRUPO (base no main atual deles, não no fork)
@@ -102,6 +113,36 @@ gh pr create --repo <owner>/<repo> --base main --head wendelmax:ci/pam-nota --ti
 > **Importante 2:** antes de commitar, **remova `nota.md` e `nota.json`** (sao artefatos temporarios locais; no repo so vao `README.md` e `NOTA.md`).
 >
 > **Importante 3:** dar force-push com a branch **baseada no main atual do grupo**. Se basar no main do fork (que pode estar velho), o PR aparece cheio de conflito/diff do app inteiro.
+>
+> **Importante 4:** o PR de **visibilidade** (badge + `NOTA.md`) é outra branch: `ci/nota-visivel`. Clonar a errada faz merge de uma branch sem os marcadores do badge — em 19/10 quase apaguei o `PAM-CI-NOTA-INICIO`/`FIM` do ToDoDev- por causa disso.
+
+## Conflito no PR quando o grupo evoluiu o main
+
+O grupo subiu código depois que a branch da nota foi criada → o PR fica `CONFLICTING/DIRTY`. Corrigir **na branch do PR**, preservando o trabalho deles:
+
+```bash
+gh repo clone wendelmax/<Repo> /tmp/fix-<Repo> -- --branch ci/nota-visivel
+cd /tmp/fix-<Repo>
+git remote add upstream https://github.com/<owner>/<Repo>.git
+git fetch upstream main
+
+git merge upstream/main        # conflito costuma ser so no README.md
+# resolve: leva o texto DO GRUPO e reinsere o bloco entre os marcadores
+git add README.md
+git -c user.email="jackson.sa@cps.sp.gov.br" -c user.name="Jackson Sá" commit
+
+git remote set-url origin git@github.com:wendelmax/<Repo>.git   # SSH
+git push origin ci/nota-visivel
+```
+
+Conferindo que voltou a ficar bom:
+
+```bash
+gh pr view -R <owner>/<Repo> <num> --json mergeable,mergeStateStatus   # MERGEABLE/CLEAN
+grep -c 'PAM-CI-NOTA-' README.md                                       # 2
+```
+
+> A numeração da nota dentro do bloco fica **velha** até o merge — o `publicar-nota` roda de novo em todo push para `main` e corrige sozinho. Não adianta editar à mão.
 
 ## Subir o CI em um repo novo (grupo novo)
 

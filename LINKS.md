@@ -4,9 +4,9 @@ Fork = cópia do repo do grupo sob `wendelmax/` (de onde saem os PRs do professo
 
 ## 1. ToDoDev- — FocusIT (lista de tarefas)
 - Repo: https://github.com/manu0312090-hub/ToDoDev- · Fork: https://github.com/wendelmax/ToDoDev-
-- Issues: [#2 bug async-storage](https://github.com/manu0312090-hub/ToDoDev-/issues/2) · [#3 Fase 3](https://github.com/manu0312090-hub/ToDoDev-/issues/3)
+- Issues: [#2 bug async-storage](https://github.com/manu0312090-hub/ToDoDev-/issues/2) · [#3 Fase 3](https://github.com/manu0312090-hub/ToDoDev-/issues/3) · **[#6 package.json = lockfile](https://github.com/manu0312090-hub/ToDoDev-/issues/6)** (19/10, −7 pts)
 - PR: [#4 CI de nota](https://github.com/manu0312090-hub/ToDoDev-/pull/4) — ✅ MERGED
-- PR nota visível: [#5 badge no README + NOTA.md](https://github.com/manu0312090-hub/ToDoDev-/pull/5) — OPEN/CLEAN (aguardando merge do grupo)
+- PR nota visível: [#5 badge no README + NOTA.md](https://github.com/manu0312090-hub/ToDoDev-/pull/5) — OPEN/CONFLICTING → **conflito resolvido em 19/10** (`main` do grupo mergeado na branch `ci/nota-visivel`, push via SSH, CI `success`). Comentário pedindo merge; aguardando o grupo
 
 ## 2. EDUCAMIRIM — VIISRE (atividades do Mirim)
 - Repo: https://github.com/IsabelaStefanelle/EDUCAMIRIM · Fork: https://github.com/wendelmax/EDUCAMIRIM
