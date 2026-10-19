@@ -144,6 +144,31 @@ grep -c 'PAM-CI-NOTA-' README.md                                       # 2
 
 > A numeração da nota dentro do bloco fica **velha** até o merge — o `publicar-nota` roda de novo em todo push para `main` e corrige sozinho. Não adianta editar à mão.
 
+## Republicar a nota sem esperar um push do aluno (workflow_dispatch)
+
+Útil quando **você** muda os critérios (`scripts/pam-ci.mjs`, pesos, faixas) e quer ver a nota recalculada em todos os `main` sem pedir a 12 grupos que subam um commit.
+
+O gatilho `workflow_dispatch:` já existe no workflow. O que faltava eram as condições dos 2 passos finais, que só rodavam em `push`. Agora são:
+
+```yaml
+if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]'
+```
+
+Como usar (num repo que já tenha esse workflow):
+
+```bash
+gh workflow run pam-ci.yml -R <owner>/<repo> --ref main
+gh run list -R <owner>/<repo> --event workflow_dispatch   # acompanhar
+```
+
+Validado no sandbox `wendelmax/pam-ci-testes` em 19/10: run `workflow_dispatch` → `success`, passo "Escrever a nota..." executou (`README.md atualizado com o bloco da nota`) e o passo de commit rodou (`Nota sem mudanca — nada a commitar`).
+
+> [!WARNING]
+> **Os 12 repos ainda estão com a versão antiga** (condição só com `push`). Disparar o workflow lá hoje valida e sobe o artefato, mas **não republica** o `README`/`NOTA.md`. Para valer, injete este `scripts/pam-ci.yml` nos 12 (fluxo de "Reinjetar / atualizar o CI nos repos" acima) — só faça isso quando for mesmo necessário, para não encher os repos de aluno de commit.
+
+> [!NOTE]
+> `gh workflow run` é chamada de API e funciona com o token atual; não cai na armadilha do escopo `workflow` (essa só bloqueia push de arquivo em `.github/workflows/*`).
+
 ## Subir o CI em um repo novo (grupo novo)
 
 Copie a config de um projeto com estrutura parecida, ajuste os caminhos, teste com `node .github/scripts/pam-ci.mjs` na raiz do projeto e abra o PR. O resto do fluxo é idêntico.

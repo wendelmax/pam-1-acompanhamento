@@ -66,6 +66,7 @@ PR com workflow + script + config injetado em **todos os 12 repos** (ver `AUTOMA
 - O script e as configs por projeto estão versionados aqui em `scripts/`.
 - Mudou o gabarito? Edite `scripts/pam-ci.mjs` (checklist, pesos, faixas de nota) e/ou o `scripts/configs/<projeto>.json`.
 - Depois reinjetar nos repos (passo 5 do `AUTOMACAO-NOTA.md`).
+- **Republicar a nota sem push do aluno**: o `workflow_dispatch` já está habilitado em `scripts/pam-ci.yml` (19/10, testado no sandbox), mas **ainda não foi injetado nos 12 repos** — ver aviso em `AUTOMACAO-NOTA.md`. Injetar só quando for necessário, para não poluir os repos de aluno.
 
 ## 5. Ambiente / paths úteis (nesta máquina)
 
