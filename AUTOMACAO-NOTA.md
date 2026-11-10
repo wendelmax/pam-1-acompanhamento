@@ -6,10 +6,11 @@ Injetada via PR em **todos os 12 repos** dos grupos. É o mesmo conteúdo em tod
 
 - Roda a cada `push`, em cada `pull_request` e manualmente ("Run workflow").
 - Valida um **checklist** derivado das fases:
-  - **Fase 1 — Estrutura (10 pts):** README, app principal, `expo`, tela de listagem, dados seed, tela de formulário, tela de detalhe, imports sem dependência faltando, `app.json` nomeado, ≥2 telas.
-  - **Fase 2 — AsyncStorage (15 pts):** dependência, import, `getItem`, `setItem`, funções carregar/adicionar/buscar/excluir, formulário com `TextInput` que salva, lista alimentada pelo storage, detalhe buscando, exclusão com `Alert`, seed gravado na 1ª execução, validação de campos.
-  - **Fase 3 — SQLite (30 pts):** dependência `expo-sqlite`, import, arquivo de banco, `CREATE TABLE`, `INSERT`, `SELECT`, `UPDATE`, `DELETE`, `WHERE`, `openDatabaseAsync`, lista/form/detalhe ligados ao banco, `async/await`, seed em SQL.
-- **Calcula a nota** (55 pts) e a converte:
+  - **Fase 1 — Estrutura (10 pts = 10 × 1 pt):** README, app principal, `expo`, tela de listagem, dados seed, tela de formulário, tela de detalhe, imports sem dependência faltando, `app.json` nomeado, ≥2 telas.
+  - **Fase 2 — AsyncStorage / Persistência (15 pts = 15 × 1 pt):** dependência, import, leitura (`getItem`/`SELECT`), escrita (`setItem`/`INSERT`), funções carregar/adicionar/buscar/excluir, formulário com `TextInput` que salva, lista alimentada pelo storage/banco, detalhe buscando, exclusão com `Alert`, seed gravado na 1ª execução, validação de campos.
+  - **Fase 3 — SQLite (30 pts = 15 × 2 pts):** dependência `expo-sqlite`, import, arquivo de banco, `CREATE TABLE`, `INSERT`, `SELECT`, `UPDATE`, `DELETE`, `WHERE`, `openDatabaseAsync`/`openDatabaseSync`, lista/form/detalhe ligados ao banco, `async/await`, seed em SQL.
+  - **Fase 4 — Versão Final, UX e Dispositivo (45 pts = 15 × 3 pts):** `ActivityIndicator`/loading visual, estado `loading`/`carregando` com `useState`, `ListEmptyComponent`/empty state, `try/catch`, `finally`/tratamento no `catch`, `Alert.alert`/feedback amigável, `FlatList` com `keyExtractor`/`renderItem`, validação `.trim()`, CRUD SQLite completo, SQLite com `useEffect`/`useFocusEffect`, pacote de recurso nativo no `package.json`, uso da API nativa no código, separação em pastas por responsabilidade, componentização/`StyleSheet.create`, e entrega limpa (`.gitignore` + `README.md` documentado).
+- **Calcula a nota** (100 pts) e a converte:
 
   | Faixa | Conceito |
   |-------|----------|

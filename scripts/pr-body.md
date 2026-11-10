@@ -1,49 +1,25 @@
-## 🤖 CI de validação das fases + nota automática
+## 🤖 Atualização do CI: Validação da Fase 4 (Peso 3x) + Testes Funcionais de SQLite
 
-Este PR adiciona um **CI automático** ao projeto que valida as fases do Trabalho em Grupo e **gera a nota atual** a cada rodada. Não muda nada no funcionamento do app.
+Este PR atualiza o **CI automático de nota** do projeto para incluir a **Fase 4 (Entrega Final)** e os **Testes Funcionais de Execução Real do SQLite**, totalizando **100 pontos**. Não altera nenhuma tela nem o funcionamento do seu app!
 
-### O que ele faz
+### O que mudou nesta atualização
 
-1. **Valida um checklist** baseado nas fases (Fase 1 — estrutura, Fase 2 — AsyncStorage, Fase 3 — SQLite/CRUD).
-2. **Calcula a nota** de 0 a 100% e converte em conceito:
-   - **I** — Insuficiente (0–25%)
-   - **R** — Regular (25–50%)
-   - **B** — Bom (50–75%)
-   - **MB** — Muito bom (75–100%)
-3. **Publica o resultado** em dois lugares:
-   - Na aba **Actions** deste repositório (aba "Summary" da rodada), com o checklist completo marcado.
-   - Como **artefato** `nota-pam` (conteúdo: `nota.md` e `nota.json`). Cada nova rodada **atualiza a nota atual**.
-
-### Arquivos adicionados
-
-| Arquivo | Função |
-|---------|--------|
-| `.github/workflows/pam-ci.yml` | Roda a validação a cada push/PR (e manualmente em "Run workflow") |
-| `.github/scripts/pam-ci.mjs` | Script que confere cada item do checklist e calcula a nota |
-| `.github/pam-ci.config.json` | Configuração do projeto (arquivos de tela, storage, sqlite) |
-
-### Como ver a nota
-
-1. Abra a aba **Actions** → clique na rodada mais recente.
-2. No resumo, veja a nota e o checklist com os itens marcados.
-3. Ou baixe o artefato **nota-pam** (no final da página da rodada), que também tem `nota.md` e `nota.json`.
+1. **Inclusão da Fase 4 (15 itens × 3 pts = 45 pts — peso 3x):**
+   - **SQLite como única fonte de dados (18 pts):** Verifica se o fluxo das telas usa exclusivamente SQLite (sem depender de `AsyncStorage` para dados críticos) e **executa as funções do banco em memória (`node:sqlite`)** testando na prática `CREATE TABLE`, `INSERT INTO`, `SELECT`/`WHERE`, `UPDATE` e `DELETE FROM`.
+   - **Recurso do dispositivo (6 pts):** Valida o uso de pelo menos um recurso nativo (`expo-notifications`, `expo-image-picker`, `expo-location`, `expo-camera`, etc.) **ou** justificativa de não uso no `README.md`.
+   - **Polish de UX — Aula 18 (12 pts):**
+     - **Loading** ao carregar a lista do SQLite (`ActivityIndicator` + estado `loading`/`carregando`).
+     - **Empty state** quando não houver registros (mensagem amigável + ícone/emoji/ilustração).
+     - **Mensagem de erro amigável** se falhar ao salvar ou carregar (`try/catch` + `Alert`).
+   - **Organização e Entrega (9 pts):** Separação em pastas (`screens`/`app`, `database`/`data`, `components`), interface consistente (`FlatList` + `StyleSheet.create`), `.gitignore` sem `node_modules` e `README.md` documentando como testar no Expo Go / APK.
+2. **Tabela de nota no `README.md` e `NOTA.md` atualizada para 100 pontos:**
+   - **Fase 1** — Estrutura (10 itens × 1 pt = **10 pts** · peso 1x)
+   - **Fase 2** — AsyncStorage (15 itens × 1 pt = **15 pts** · peso 1x)
+   - **Fase 3** — SQLite + CRUD (15 itens × 2 pts = **30 pts** · peso 2x)
+   - **Fase 4** — App Completo: SQLite Exclusivo, UX, Dispositivo e Entrega (15 itens × 3 pts = **45 pts** · peso 3x)
+   - **Total:** **100 pontos** (**I**: <25% · **R**: 25–49% · **B**: 50–74% · **MB**: ≥75%)
 
 > [!TIP]
-> Cada vez que fizerem push (ou pedirem novo merge), o CI roda de novo e **atualiza a nota**. Vocês acompanham a evolução da fase 3 até a entrega!
+> Assim que vocês fizerem o **Merge** deste PR, a nota atualizada com as 4 fases já fica visível no topo do `README.md` e detalhada item por item no arquivo [`NOTA.md`](NOTA.md)!
 
-> [!IMPORTANT]
-> O CI apenas **avalia** o código — ele não bloqueia merges e não altera o app. Os itens desmarcados no checklist indicam exatamente o que ainda falta para ganhar nota.
-
-### Critérios avaliados (checklist)
-
-**Fase 1 — Estrutura (10 pts):** README do grupo · app principal · dependência `expo` · tela de listagem · dados iniciais · tela de formulário · tela de detalhe · imports sem dependência faltando (o app não quebra ao abrir) · app.json identificando o app · mais de 1 arquivo de tela.
-
-**Fase 2 — AsyncStorage (15 pts):** dependência instalada · import · `getItem`/`setItem` · funções carregar, adicionar, buscar, excluir · formulário com `TextInput` que salva · lista alimentada pelo storage · detalhe buscando dado · exclusão com confirmação `Alert` · seed gravado na 1ª execução · validação de campos.
-
-**Fase 3 — SQLite + CRUD (30 pts):** dependência `expo-sqlite` · import · arquivo de banco · `CREATE TABLE` · `INSERT` · `SELECT` · `UPDATE` · `DELETE` · filtros com `WHERE` · `openDatabaseAsync` · lista/formulário/detalhe ligados ao banco · `async/await` · seed em SQL.
-
-### Como funciona o conceito
-
-Peso por fase: **Fase 1 = 10 pts** (respiração), **Fase 2 = 15 pts** (AsyncStorage), **Fase 3 = 30 pts** (SQLite — o foco da entrega). Total: **55 pts**.
-
-Qualquer dúvida, é só chamar o professor! 🚀
+Qualquer dúvida sobre algum item do checklist da Fase 4, é só chamar o professor! 🚀

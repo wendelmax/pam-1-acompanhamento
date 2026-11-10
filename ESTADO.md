@@ -1,45 +1,22 @@
-# Estado dos grupos (19/10/2026)
+# Estado dos grupos (09/11/2026 — Fases 1 a 4 = 100 pts)
 
-Legenda: 🟢 em dia · 🟡 em desenvolvimento · 🔴 travado/precisa de ajuda
+Legenda: 🟢 MB (≥75%) · 🟡 B (50–74%) · 🔵 R (25–49%) · 🔴 I (<25%)
 
-Notas medidas pelo **CI de cada repo** (rodada de 19/10/2026, `main` de cada um). I = Insuficiente (<25%) · R = Regular (25–50%) · B = Bom (50–75%) · MB = Muito bom (≥75%).
+Notas medidas pelo **CI de cada repo** com a validação da **Fase 4 (peso 3x = 45 pts) + Testes Funcionais de SQLite em Runtime** incluída, totalizando **100 pontos** (F1: 10 · F2: 15 · F3: 30 · F4: 45).
 
-| # | Projeto | Grupo | Tema | F1 | F2 | F3 | Nota | PR | Pendências |
-|---|---------|-------|------|----|----|----|------|------------|
-| 1 | ToDoDev- | FocusIT | Lista de tarefas | 8/10 | 10/15 | 24/30 | **MB** 76% (42/55) | aberto #5 | 🔴 **`package.json` foi sobrescrito pelo `package-lock.json` em 18/10** — perdeu `dependencies`/`main`/`scripts`. Custou 7 pts hoje |
-| 2 | EDUCAMIRIM | VIISRE | Atividades do Mirim | 10/10 | 15/15 | 28/30 | **MB** 96% (53/55) | ✅ #5 | Só 2 pts de F3. Nota máxima ao alcance |
-| 3 | 3GDStock | 3GD | Estoque de materiais | 8/10 | 10/15 | **4/30** | **R** 40% (22/55) | aberto #5 | F3 ainda baixa. Issues #2 e #3 |
-| 4 | TripGo | TripGo | Viagens | 10/10 | 13/15 | **2/30** | **R** 45% (25/55) | ✅ #8 | F1 e F2 hoje prontos; F3 zerada (issue #7) |
-| 5 | equipcontrol | TechControl | Equipamentos | 10/10 | 13/15 | 8/30 | **B** 56% (31/55) | aberto #5 | F3 em andamento (issue #3) |
-| 6 | EduSophia | Educa+ | Matérias | 9/10 | 13/15 | **4/30** | **R** 47% (26/55) | ✅ #4 | F3 ainda baixa (issue #3) |
-| 7 | MEIHub | Babuínos do note.js | Gestão MEI | 8/10 | 12/15 | 24/30 | **MB** 80% (44/55) | ✅ #6 | **Subiu de R 36% p/ MB 80%** com o SQLite de 19/10 |
-| 8 | CDF | Controle Fin. Diário | Lançamentos | 9/10 | 14/15 | 26/30 | **MB** 89% (49/55) | ✅ #5 | F3 quase completa |
-| 9 | Pet_Match | Zenin's | Adoção de pets | 7/10 | 12/15 | **2/30** | **R** 38% (21/55) | ✅ #8 | Menor nota da turma: F1 e F3 (issues #4, #5, #7) |
-| 10 | F.O.C | F.O.C | Controle financeiro | 8/10 | 13/15 | **4/30** | **R** 45% (25/55) | ✅ #6 | F3 ainda baixa (issue #5) |
-| 11 | Vamoa- | ref's | Viagens | 9/10 | 15/15 | **2/30** | **R** 47% (26/55) | ✅ #7 | F2 completa; F3 zerada (issue #4) |
-| 12 | Boom-Patch | TRP bentão | Campeonatos | 9/10 | 15/15 | 6/30 | **B** 55% (30/55) | ✅ #9 | F2 completa; F3 em andamento (issue #5) |
+| # | Projeto | Grupo | Tema | F1 | F2 | F3 | F4 | Nota | Pendências p/ 100% |
+|---|---------|-------|------|----|----|----|----|------|--------------------|
+| 1 | EDUCAMIRIM | VIISRE | Atividades do Mirim | 10/10 | 15/15 | 30/30 | 39/45 | 🟢 **MB** 94% (94/100) | Falta recurso nativo do dispositivo ou justificativa (6 pts) |
+| 2 | equipcontrol | TechControl | Equipamentos | 10/10 | 15/15 | 30/30 | 36/45 | 🟢 **MB** 91% (91/100) | Falta recurso nativo do dispositivo e `.gitignore` |
+| 3 | Boom-Patch | TRP bentão | Campeonatos | 10/10 | 15/15 | 30/30 | 36/45 | 🟢 **MB** 91% (91/100) | Falta recurso nativo do dispositivo e instruções de teste no README |
+| 4 | CDF | Controle Fin. Diário | Lançamentos | 10/10 | 15/15 | 30/30 | 33/45 | 🟢 **MB** 88% (88/100) | Falta `ActivityIndicator` (loading), `FlatList` e recurso nativo |
+| 5 | ToDoDev- | FocusIT | Lista de tarefas | 8/10 | 14/15 | 28/30 | 36/45 | 🟢 **MB** 86% (86/100) | Corrigir `package.json` (issue #6), `.gitignore` e recurso nativo |
+| 6 | MEIHub | Babuínos do note.js | Gestão MEI | 8/10 | 12/15 | 28/30 | 36/45 | 🟢 **MB** 84% (84/100) | Separar código em pastas e remover `AsyncStorage` residual |
+| 7 | F.O.C | F.O.C | Controle financeiro | 10/10 | 14/15 | 24/30 | 36/45 | 🟢 **MB** 84% (84/100) | Adicionar `FlatList`, filtro SQL e recurso nativo |
+| 8 | TripGo | TripGo | Viagens | 10/10 | 14/15 | 2/30 | 15/45 | 🔵 **R** 41% (41/100) | Migrar de `AsyncStorage` para SQLite (F3 + F4) e recurso nativo |
+| 9 | 3GDStock | 3GD | Estoque de materiais | 9/10 | 11/15 | 2/30 | 18/45 | 🔵 **R** 40% (40/100) | Migrar de `AsyncStorage` para SQLite (F3 + F4) e recurso nativo |
+| 10 | Vamoa- | ref's | Viagens | 9/10 | 15/15 | 2/30 | 9/45 | 🔵 **R** 35% (35/100) | Migrar de `AsyncStorage` para SQLite (F3 + F4) e UX de F4 |
+| 11 | Pet_Match | Zenin's | Adoção de pets | 9/10 | 12/15 | 2/30 | 12/45 | 🔵 **R** 35% (35/100) | Migrar de `AsyncStorage` para SQLite (F3 + F4) e UX de F4 |
+| 12 | EduSophia | Educa+ | Matérias | 10/10 | 13/15 | 2/30 | 9/45 | 🔵 **R** 34% (34/100) | Migrar de `AsyncStorage` para SQLite (F3 + F4) e UX de F4 |
 
-**Resumo:** **4 MB** (EDUCAMIRIM 96, CDF 89, MEIHub 80, ToDoDev- 76) · **2 B** (equipcontrol 56, Boom-Patch 55) · **6 R** (EduSophia 47, Vamoa- 47, F.O.C 45, TripGo 45, 3GDStock 40, Pet_Match 38) · **0 I**.
-Média da turma: **59,7%** (32,8/55, somando 394 de 660 pontos disponíveis). A Fase 3 (30 dos 55 pontos) continua sendo o maior gap: **6 de 12 grupos** têm 4 pts ou menos nela.
-
-## O que mudou desde a rodada anterior (05/10 → 19/10)
-
-- **MEIHub**: R 36% → **MB 80%** (+24 pts) — implementou SQLite em 19/10 17:12. O CI já publicou a nota sozinho (commit do bot às 20:12).
-- **ToDoDev-**: R 40% → **MB 76%** (+20 pts) — refatorou as telas com SQLite em 18/10. **Mas** o mesmo commit sobrescreveu o `package.json`, que hoje custa 7 pts e impede a instalação das dependências.
-- **TripGo**: 36% → 45% — F1 e F2 completas (10/10 e 13/15); F3 ainda zerada.
-- **Pet_Match**: 36% → 38% (+1 pt).
-- **PRs da nota visível**: de 6 abertos para **3** — Educação: 9 de 12 grupos já mergearam (badge + `NOTA.md` no `main`).
-
-## O que já foi entregue aos grupos
-
-- ✅ Scaffolds de Fases 1/2 prontos em **Vamoa-** e **Boom-Patch** (mergeados).
-- ✅ **CI de nota** (validação das fases) mergeada nos **12** repos — todos com runs `success`, **zero falhas**.
-- ✅ **Nota visível** (badge no `README.md` + `NOTA.md`) mergeada em **9** repos.
-- ✅ **Issue de Fase 3** (dicas SQLite por tema) em todos os 12 repos.
-- ✅ **Issue de correção** para os que usam AsyncStorage sem a dependência (ToDoDev-, 3GDStock, Pet_Match).
-
-## Pendências que dependem dos grupos
-
-- Merge dos PRs da nota visível: **ToDoDev- #5**, **3GDStock #5**, **equipcontrol #5** — comentário postado nos 3 em 19/10 pedindo o merge.
-- **ToDoDev-**: corrigir o `package.json` — [issue #6](https://github.com/manu0312090-hub/ToDoDev-/issues/6) com o passo a passo (restaura o manifest e sobe 76% → 84%).
-- 6 grupos com Fase 3 praticamente zerada: F1 e F2 já estão suficientes, o ganho está em instalar e usar o SQLite.
+**Resumo:** **7 MB** · **0 B** · **5 R** · **0 I**. Média da turma: **66,9/100 (66,9%)**.
